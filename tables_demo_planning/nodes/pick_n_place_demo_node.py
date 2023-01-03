@@ -42,6 +42,7 @@ import rospy
 import unified_planning
 from std_msgs.msg import String
 from unified_planning.model import Object, Problem
+from unified_planning.model.metrics import MinimizeSequentialPlanLength
 from unified_planning.shortcuts import Not
 from tables_demo_planning.mobipick_components import APIRobot, ArmPose, EnvironmentRepresentation, Item
 from tables_demo_planning.demo_domain import Domain
@@ -188,6 +189,7 @@ class PickAndPlaceDomain(Domain[PickAndPlaceEnv]):
         while active:
             # Create problem based on current state.
             problem = self.initialize_problem()
+            problem.add_quality_metric(MinimizeSequentialPlanLength())
             self.set_initial_values(problem)
             self.set_goals(problem)
 

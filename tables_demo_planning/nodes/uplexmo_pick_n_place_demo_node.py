@@ -28,6 +28,7 @@ from unified_planning.engines import OptimalityGuarantee
 from up_bridge.plexmo import SequentialPlanDispatcher
 from up_bridge.plexmo import SequentialPlanMonitor
 from unified_planning.model import UPCOWState
+from unified_planning.model.metrics import MinimizeSequentialPlanLength
 
 
 class PickAndPlaceOrchestrator:
@@ -71,6 +72,7 @@ class PickAndPlaceOrchestrator:
 
         # generate problem and plan
         self._problem = self._domain.initialize_problem()
+        self._problem.add_quality_metric(MinimizeSequentialPlanLength())
         self._domain.set_initial_values(self._problem)
         self._domain.set_goals(self._problem)  # TODO take goal from external action
         # TODO use bridge.solve() once it returns plan

@@ -40,6 +40,7 @@ from collections import defaultdict
 import rospy
 from geometry_msgs.msg import Pose
 from unified_planning.model import Object
+from unified_planning.model.metrics import MinimizeSequentialPlanLength
 from unified_planning.plans import ActionInstance
 from unified_planning.shortcuts import And, Equals, Not, Or
 from tables_demo_planning.demo_domain import Domain
@@ -290,6 +291,7 @@ class TablesDemoDomain(Domain[E]):
                 self.search_box,
             ),
         )
+        self.problem.add_quality_metric(MinimizeSequentialPlanLength())
         self.subproblem = self.define_problem(
             fluents=(
                 self.robot_at,
@@ -308,6 +310,7 @@ class TablesDemoDomain(Domain[E]):
                 self.conclude_box_search,
             ),
         )
+        self.subproblem.add_quality_metric(MinimizeSequentialPlanLength())
 
         self.method_labels.update(
             {
