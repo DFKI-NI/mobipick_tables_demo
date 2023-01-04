@@ -16,5 +16,4 @@ vcs pull
 mobipick/install-deps.sh
 
 # Install Unified Planning library and its planners.
-pip install unified-planning==0.4.2.187.dev1
-pip install up-fast-downward
+pip install unified-planning[tamer,fast-downward]==0.5
