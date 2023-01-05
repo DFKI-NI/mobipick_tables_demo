@@ -16,9 +16,9 @@ repositories:
     url: https://github.com/DFKI-NI/mobipick.git
     version: noetic
   object_pose_msgs:
-     type: git
-     url: https://github.com/DFKI-NI/object_pose_msgs.git
-     version: main
+    type: git
+    url: https://github.com/DFKI-NI/object_pose_msgs.git
+    version: main
   pbr_objects:
     type: git
     url: https://github.com/DFKI-NI/pbr_objects.git
@@ -35,3 +35,6 @@ repositories:
     type: git
     url: https://github.com/DFKI-NI/symbolic_fact_generation.git
     version: main
+  unified-planning-bridge:
+    type: git
+    url: https://github.com/aiplan4eu/unified-planning-bridge.git

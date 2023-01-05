@@ -45,7 +45,7 @@ from unified_planning.engines import OptimalityGuarantee
 from unified_planning.model import Fluent, InstantaneousAction, Object, Problem
 from unified_planning.plans import ActionInstance
 from unified_planning.shortcuts import Equals, Not, OneshotPlanner
-from tables_demo_planning.planning_bridge import Bridge
+from up_bridge.bridge import Bridge
 from tables_demo_planning.mobipick_components import ArmPose, EnvironmentRepresentation, Item, Location, Robot
 from robot_api import TuplePose
 

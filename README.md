@@ -145,6 +145,12 @@ roslaunch mobipick_pick_n_place mobipick_pick_n_place.launch world:=moelk_tables
 rosservice call /mobipick/continue_statemachine
 ```
 
+An alternative version of this demo exists, which makes use of the generic plan execution and monitoring module [plexmo](https://github.com/aiplan4eu/unified-planning-bridge/tree/master/up_bridge/plexmo).
+
+```bash
+rosrun tables_demo_planning uplexmo_pick_n_place_demo_node.py
+```
+
 Plan visualization
 ------------------
 
